@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imperial Code - Oudora</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+/* =======================
+   BODY + BACKGROUND
+======================= */
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    color: #e8e6e3;
+    line-height: 1.6;
+    background: 
+        radial-gradient(circle at top, rgba(201,168,106,0.08), transparent 50%),
+        radial-gradient(circle at bottom, rgba(80,60,20,0.15), transparent 60%),
+        linear-gradient(180deg, #050507, #000);
+    overflow-x: hidden;
+}
+
+/* GLOW */
+body::before {
+    content: "";
+    position: fixed;
+    top: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(201,168,106,0.15), transparent 70%);
+    filter: blur(40px);
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+/* LOGO */
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 120px;
+    filter: drop-shadow(0 0 12px rgba(201,168,106,0.5));
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 38px;
+    letter-spacing: 6px;
+    margin-top: 10px;
+    text-shadow: 0 0 10px rgba(201,168,106,0.3);
+}
+
+/* SUBTITLE */
+.subtitle {
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* QUOTE */
+.quote {
+    text-align: center;
+    margin: 25px 0;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* SECTION */
+.section {
+    margin-top: 40px;
+}
+
+/* INDEX BOX */
+.index-box {
+    background: rgba(255,255,255,0.03);
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid rgba(201,168,106,0.25);
+    backdrop-filter: blur(12px);
+}
+
+/* LOGO MINI */
+.logo-mini {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo-mini img {
+    width: 75px;
+    filter: drop-shadow(0 0 15px rgba(201,168,106,0.3));
+}
+
+/* STAMP */
+.stamp {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(201,168,106,0.8);
+    margin-bottom: 15px;
+}
+
+/* STAT */
+.stat {
+    margin-bottom: 12px;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+/* BAR */
+.bar {
+    height: 6px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #c9a86a, #f5e6b0);
+    animation: fill 2s forwards;
+}
+
+@keyframes fill {
+    from { width: 0; }
+}
+
+/* REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container reveal">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Maison Oudora">
+    </div>
+
+    <!-- TITLE -->
+    <div class="title">IMPERIAL CODE</div>
+    <div class="subtitle">الشفرة الإمبراطورية</div>
+
+    <!-- QUOTE -->
+    <div class="quote">
+        "ليست كل الشفرات تُفك... بعضها يُرتدى."
+    </div>
+
+    <!-- INDEX -->
+    <div class="section">
+
+        <div class="index-box">
+
+           
+
+            <div class="stamp">CERTIFIED • MAISON OUDORA</div>
+
+            <div class="stat">
+                <div class="label"><span>Presence</span><span>9.7</span></div>
+                <div class="bar"><div class="bar-fill" style="width:97%"></div></div>
+            </div>
+
+            <div class="stat">
+                <div class="label"><span>Mystique</span><span>9.5</span></div>
+                <div class="bar"><div class="bar-fill" style="width:95%"></div></div>
+            </div>
+
+            <div class="stat">
+                <div class="label"><span>Elegance</span><span>9.8</span></div>
+                <div class="bar"><div class="bar-fill" style="width:98%"></div></div>
+            </div>
+
+            <div class="stat">
+                <div class="label"><span>Signature</span><span>9.6</span></div>
+                <div class="bar"><div class="bar-fill" style="width:96%"></div></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        Imperial Code — Maison Oudora
+    </div>
+
+</div>
+
+<!-- JS -->
+<script>
+window.addEventListener("scroll", function () {
+    document.querySelector(".reveal").classList.add("active");
+});
+</script>
+
+</body>
+</html>
