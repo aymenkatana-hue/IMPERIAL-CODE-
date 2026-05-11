@@ -4,138 +4,210 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imperial Code - Oudora</title>
+
+<title>Imperial Code - Maison Oudora</title>
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-html, body {
-    background: #050507;
-}
 
-.reveal {
-    opacity: 1;
-    transform: none;
-    visibility: visible;
+/* =========================
+   GLOBAL
+========================= */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #050507;
+    overflow-x: hidden;
 }
-/* =======================
-   BODY + BACKGROUND
-======================= */
 
 body {
-    margin: 0;
     font-family: 'Playfair Display', serif;
     color: #e8e6e3;
     line-height: 1.6;
-    background: 
-        radial-gradient(circle at top, rgba(201,168,106,0.08), transparent 50%),
-        radial-gradient(circle at bottom, rgba(80,60,20,0.15), transparent 60%),
+
+    background:
+        radial-gradient(circle at top,
+        rgba(201,168,106,0.08),
+        transparent 50%),
+
+        radial-gradient(circle at bottom,
+        rgba(80,60,20,0.15),
+        transparent 60%),
+
         linear-gradient(180deg, #050507, #000);
-    overflow-x: hidden;
 }
-/* GLOW */
+
+/* =========================
+   LUXURY GLOW
+========================= */
+
 body::before {
     content: "";
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(201,168,106,0.12), transparent 70%);
-    filter: blur(25px);
+    background:
+        radial-gradient(circle,
+        rgba(201,168,106,0.10),
+        transparent 70%);
+    filter: blur(20px);
     z-index: 0;
     pointer-events: none;
 }
 
-/* CONTAINER */
+/* =========================
+   CONTAINER
+========================= */
+
 .container {
+    position: relative;
+    z-index: 2;
     max-width: 900px;
     margin: auto;
     padding: 60px 20px;
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
+
 .logo {
     text-align: center;
 }
 
 .logo img {
     width: 120px;
-    filter: drop-shadow(0 0 12px rgba(201,168,106,0.5));
+    filter: drop-shadow(0 0 12px rgba(201,168,106,0.45));
 }
 
-/* TITLE */
+/* =========================
+   TITLE
+========================= */
+
 .title {
     text-align: center;
     font-family: 'Cinzel', serif;
-    font-size: 38px;
+    font-size: 40px;
     letter-spacing: 6px;
-    margin-top: 10px;
-    text-shadow: 0 0 10px rgba(201,168,106,0.3);
+    margin-top: 18px;
+
+    text-shadow:
+        0 0 12px rgba(201,168,106,0.25);
 }
 
-/* SUBTITLE */
+/* =========================
+   PERFUME IMAGE
+========================= */
+
+.hero-image {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.hero-image img {
+    width: 230px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: auto;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 0 35px rgba(201,168,106,0.18);
+
+    transition: 0.4s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.03);
+}
+
+/* =========================
+   SUBTITLE
+========================= */
+
 .subtitle {
     text-align: center;
-    opacity: 0.8;
+    opacity: 0.82;
+    font-size: 16px;
+    letter-spacing: 2px;
 }
 
-/* QUOTE */
+/* =========================
+   QUOTE
+========================= */
+
 .quote {
     text-align: center;
-    margin: 25px 0;
+    margin: 28px 0;
     font-style: italic;
-    opacity: 0.9;
+    opacity: 0.88;
+    font-size: 15px;
 }
 
-/* SECTION */
+/* =========================
+   SECTION
+========================= */
+
 .section {
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
-/* INDEX BOX */
+/* =========================
+   INDEX BOX
+========================= */
+
 .index-box {
     background: rgba(255,255,255,0.03);
-    padding: 22px;
-    border-radius: 14px;
-    border: 1px solid rgba(201,168,106,0.25);
-    backdrop-filter: blur(12px);
+
+    padding: 24px;
+
+    border-radius: 16px;
+
+    border:
+        1px solid rgba(201,168,106,0.22);
+
+    backdrop-filter: blur(10px);
 }
 
-/* LOGO MINI */
-.logo-mini {
-    text-align: center;
-    margin-bottom: 10px;
-}
+/* =========================
+   STAMP
+========================= */
 
-.logo-mini img {
-    width: 75px;
-    filter: drop-shadow(0 0 15px rgba(201,168,106,0.3));
-}
-
-/* STAMP */
 .stamp {
     text-align: center;
     font-size: 10px;
     letter-spacing: 3px;
     color: rgba(201,168,106,0.8);
-    margin-bottom: 15px;
+    margin-bottom: 22px;
 }
 
-/* STAT */
+/* =========================
+   STATS
+========================= */
+
 .stat {
-    margin-bottom: 12px;
+    margin-bottom: 18px;
 }
 
 .label {
     display: flex;
     justify-content: space-between;
     font-size: 13px;
+    margin-bottom: 6px;
 }
 
-/* BAR */
+/* =========================
+   BARS
+========================= */
+
 .bar {
     height: 6px;
     background: rgba(255,255,255,0.06);
@@ -145,41 +217,59 @@ body::before {
 
 .bar-fill {
     height: 100%;
-    width: 0;
-    background: linear-gradient(90deg, #c9a86a, #f5e6b0);
-    animation: fill 2s forwards;
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c9a86a,
+            #f5e6b0
+        );
 }
 
-@keyframes fill {
-    from { width: 0; }
-}
+/* =========================
+   FOOTER
+========================= */
 
-/* REVEAL */
-.reveal {
-    opacity: 0;
-    transform: none(30px);
-    transition: 1s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* FOOTER */
 .footer {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 60px;
     font-size: 12px;
     opacity: 0.6;
 }
-</style>
 
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 40px 18px;
+    }
+
+    .title {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+
+    .hero-image img {
+        width: 190px;
+    }
+
+    body::before {
+        width: 220px;
+        height: 220px;
+        filter: blur(14px);
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="container reveal">
+<div class="container">
 
     <!-- LOGO -->
     <div class="logo">
@@ -187,11 +277,19 @@ body::before {
     </div>
 
     <!-- TITLE -->
-    <div class="title">IMPERIAL CODE</div>
-   <div class="hero-image">
-    <img src="perfume.png" alt="Imperial Code Perfume">
-</div>
-    <div class="subtitle">الشفرة الإمبراطورية</div>
+    <div class="title">
+        IMPERIAL CODE
+    </div>
+
+    <!-- PERFUME -->
+    <div class="hero-image">
+        <img src="perfume.png" alt="Imperial Code Perfume">
+    </div>
+
+    <!-- SUBTITLE -->
+    <div class="subtitle">
+        الشفرة الإمبراطورية
+    </div>
 
     <!-- QUOTE -->
     <div class="quote">
@@ -203,42 +301,66 @@ body::before {
 
         <div class="index-box">
 
-           
-
-            <div class="stamp">CERTIFIED • MAISON OUDORA</div>
-
-            <div class="stat">
-                <div class="label"><span>Presence</span><span>9.7</span></div>
-                <div class="bar"><div class="bar-fill" style="width:97%"></div></div>
+            <div class="stamp">
+                CERTIFIED • MAISON OUDORA
             </div>
 
             <div class="stat">
-                <div class="label"><span>Mystique</span><span>9.5</span></div>
-                <div class="bar"><div class="bar-fill" style="width:95%"></div></div>
+                <div class="label">
+                    <span>Presence</span>
+                    <span>9.7</span>
+                </div>
+
+                <div class="bar">
+                    <div class="bar-fill" style="width:97%"></div>
+                </div>
             </div>
 
             <div class="stat">
-                <div class="label"><span>Elegance</span><span>9.8</span></div>
-                <div class="bar"><div class="bar-fill" style="width:98%"></div></div>
+                <div class="label">
+                    <span>Mystique</span>
+                    <span>9.5</span>
+                </div>
+
+                <div class="bar">
+                    <div class="bar-fill" style="width:95%"></div>
+                </div>
             </div>
 
             <div class="stat">
-                <div class="label"><span>Signature</span><span>9.6</span></div>
-                <div class="bar"><div class="bar-fill" style="width:96%"></div></div>
+                <div class="label">
+                    <span>Elegance</span>
+                    <span>9.8</span>
+                </div>
+
+                <div class="bar">
+                    <div class="bar-fill" style="width:98%"></div>
+                </div>
+            </div>
+
+            <div class="stat">
+                <div class="label">
+                    <span>Signature</span>
+                    <span>9.6</span>
+                </div>
+
+                <div class="bar">
+                    <div class="bar-fill" style="width:96%"></div>
+                </div>
             </div>
 
         </div>
+
     </div>
 
     <!-- FOOTER -->
     <div class="footer">
         Imperial Code — Maison Oudora
+        <br><br>
+        “Not a fragrance. A coded presence.”
     </div>
 
 </div>
-
-<!-- JS -->
-
 
 </body>
 </html>
